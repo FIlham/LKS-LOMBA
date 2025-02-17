@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.123);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -4px 12px;
+}
+
+header .hamb {
+    width: 32px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+header .hamb input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+}
+
+header .hamb span {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 25%;
+    transition: all 0.3s;
+}
+
+header .hamb input:checked ~ span:nth-child(2) {
+    rotate: 45deg;
+    transform-origin: top left;
+}
+
+header .hamb input:checked ~ span:nth-child(3) {
+    scale: 0;
+}
+
+header .hamb input:checked ~ span:last-child {
+    rotate: -45deg;
+    transform-origin: bottom left;
+}
+
+header nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.555);
+    backdrop-filter: blur(8px);
+    color: black;
+    gap: 20px;
+    padding: 0;
+    width: 0;
+    text-align: right;
+    height: 100vh;
+    transition: all 0.3s;
+}
+
+header nav.open {
+    width: 45%;
+    padding: 12px;
+}
+
+header nav a {
+    position: relative;
+}
+
+header nav a::after {
+    content: "";
+    display: block;
+    padding-bottom: 3px;
+    border-bottom: 1px solid;
+    width: 0;
+    position: absolute;
+    right: 0;
+    transition: all 0.3s;
+}
+
+header nav a:hover::after {
+    width: 50%;
+}
+
+#home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(gambar.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+#home .contents {
+    position: absolute;
+    top: 50%;
+    padding: 0 12px;
+    width: 75%;
+    color: white;
+}
+
+#home .contents h1 {
+    font-size: 2.3em;
+    font-weight: 800;
+    letter-spacing: 1rem;
+    line-height: 1em;
+}
+
+#home .contents p {
+    margin: 12px 0;
+}
+
+#home .contents a {
+    border: 1px solid;
+    padding: 8px;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+#home .contents a:hover {
+    background-color: white;
+    color: black;
+}
+
+@media only screen and (min-width: 768px) {
+    header .hamb {
+        display: none;
+    }
+
+    header nav {
+        position: static;
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        background: none;
+        backdrop-filter: none;
+    }
+
+    header nav.open {
+        width: auto;
+    }
+
+    header nav a::after {
+        position: static;
+    }
+
+    header nav a:hover::after {
+        width: 100%;
+    }
+}

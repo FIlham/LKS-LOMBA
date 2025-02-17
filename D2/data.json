@@ -1,0 +1,24 @@
+{
+    "messages": [
+        {
+            "from": "Fahmi",
+            "text": "Hai Icha, apa kabarmu di sana?"
+        },
+        {
+            "from": "Icha",
+            "text": "Halo! Aku baik di sini, bagaimana denganmu?"
+        },
+        {
+            "from": "Fahmi",
+            "text": "Tentu aku juga baik-baik saja di sini. Bagaimana kabar mamamu?"
+        },
+        {
+            "from": "Icha",
+            "text": "Ahh baiklah, syukurlah."
+        },
+        {
+            "from": "Icha",
+            "text": "Balik yuk, aku sama mama kangen :)"
+        }
+    ]
+}

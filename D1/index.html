@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Internalization</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            a {
+                text-decoration: none;
+                list-style: none;
+                color: inherit;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-color: green;
+                color: white;
+                padding: 12px;
+            }
+
+            nav ul {
+                display: flex;
+                gap: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <h1>Navigation</h1>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li>
+                    <select name="lang" id="lang">
+                        <option value="en" selected>English</option>
+                        <option value="id">Indonesia</option>
+                        <option value="jv">Java</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptatibus possimus, labore sed doloribus ut molestiae suscipit, quod laborum vero ea. Nemo, dolorem exercitationem?</p>
+    </body>
+</html>

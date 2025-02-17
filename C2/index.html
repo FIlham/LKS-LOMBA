@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Scope</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            #box {
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 1px solid;
+                width: 150px;
+                height: 150px;
+                box-shadow: 1px -2px 0 99999px white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sapiente et quae eaque, quidem natus cumque saepe voluptatum nulla autem eveniet esse. Corporis repellat recusandae reprehenderit natus fugiat ducimus necessitatibus,
+            dicta adipisci!
+        </p>
+
+        <script>
+            dragElement(document.getElementById("box"));
+
+            function dragElement(el) {
+                var posX,
+                    posY,
+                    tempX,
+                    tempY = 0;
+
+                window.onmousedown = onMouseDown;
+
+                function onMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    tempX = e.clientX;
+                    tempY = e.clientY;
+                    window.onmousemove = onMouseMove;
+                    window.onmouseup = onMouseUp;
+                }
+
+                function onMouseMove(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    posX = tempX - e.clientX;
+                    posY = tempY - e.clientY;
+                    tempX = e.clientX;
+                    tempY = e.clientY;
+                    el.style.left = el.offsetLeft - posX + "px";
+                    el.style.top = el.offsetTop - posY + "px";
+                }
+
+                function onMouseUp(e) {
+                    window.onmouseup = null;
+                    window.onmousemove = null;
+                }
+            }
+        </script>
+    </body>
+</html>
